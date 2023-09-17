@@ -26,7 +26,7 @@ export default function Sidebar() {
         sliderRef.current.classList.toggle('-translate-x-full', 'absolute')
     }
     return (
-        <div className='bg-[#15132B] z-[60] lg:relative lg:translate-x-0  transition-all duration-500 max-w-[345px] lg:flex flex-col 2xl:text-[10px] xl:text-[8px] text-[7px] -translate-x-full absolute pb-8' ref={sliderRef}>
+        <div className='bg-[#15132B] z-[60] lg:relative lg:overflow-y-visible lg:translate-x-0  transition-all duration-500 max-w-[345px] lg:flex flex-col 2xl:text-[10px] xl:text-[8px] text-[7px] -translate-x-full fixed top-0 bottom-0 overflow-y-scroll pb-8' ref={sliderRef}>
             <div className='flex items-center py-[48px] text-[2.4em] gap-[4px] 2xl:pl-[3.15em] xl:pl-[2.8em] pl-[2.4em] pr-[1.38em]'>
                 <h1 className=' text-[#FFFFFF] pr-[2em]'>weframetech</h1>
                 <button className='w-[2.03em]'>
