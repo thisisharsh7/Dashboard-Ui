@@ -12,7 +12,7 @@ export default function Notify() {
     return (
 
 
-        <ul className='flex gap-[4em]'>
+        <ul className='flex w-full justify-between xl:gap-[4em] '>
             <li className='relative'>
                 <div
                     className={style}>
