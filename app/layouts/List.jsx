@@ -10,7 +10,7 @@ const Todo = ({ heading}) => {
                 <div className='text-[20px] font-bold'>
                     {heading}
                 </div>
-                <div className='rounded-[14px] p-4 bg-[#6418C3;] cursor-pointer'>
+                <div className='rounded-[14px] p-4 bg-[#6418C3] cursor-pointer'>
                     <Image src={Plus} alt='' />
                 </div>
             </div>
