@@ -3,7 +3,7 @@ import React from 'react'
 import Plus from '../../public/assets/Plus.svg'
 import Card from './Card'
 
-const Progress = ({ heading, NoOfCards }) => {
+export default function Progress({ heading }) {
     return (
         <div className='flex flex-col    text-white mt-5'>
             <div className='flex items-center justify-between px-3 py-5'>
@@ -21,5 +21,3 @@ const Progress = ({ heading, NoOfCards }) => {
         </div>
     )
 }
-
-export default Progress

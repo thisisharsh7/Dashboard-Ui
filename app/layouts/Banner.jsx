@@ -7,7 +7,7 @@ import Add from "../../public/assets/add-friend 1.svg";
 import Chat from "../../public/assets/chat (1) 1.svg";
 import Users from "./Users";
 
-const Banner = () => {
+export default function Banner() {
   return (
     <div className="bg-[#15132B] w-full shadow-md  sm:p-[3em] px-[3em] py-[2.5em] rounded-[14px]  xl:text-[10px] text-[7px] ">
       <div className="flex items-center sm:flex-row flex-col-reverse justify-between sm:flex-nowrap flex-wrap  gap-[20px]">
@@ -101,5 +101,3 @@ const Banner = () => {
     </div>
   );
 };
-
-export default Banner;

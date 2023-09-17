@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image'
 import Hamburger from '../../public/assets/hamburgermenu.svg'
 import Dashboard from '../../public/assets/dashboard.svg'
@@ -12,18 +13,27 @@ import Invoices from '../../public/assets/invoice.svg'
 import Settings from '../../public/assets/setting.svg'
 import Thumbnail from '../../public/assets/thumbnail.svg'
 import Courses from '../../public/assets/Video Lesson 2 2.svg'
+import { useContext, useRef } from 'react';
+import { GlobalInfo } from '../page';
+import Karrow from '../../public/assets/Vector (1).svg';
+import Kdots from '../../public/assets/Vector.svg';
+import Mask from '../../public/assets/mask.svg';
 
 
 export default function Sidebar() {
+    const { sliderRef } = useContext(GlobalInfo);
+    const handleHide = () => {
+        sliderRef.current.classList.toggle('-translate-x-full', 'absolute')
+    }
     return (
-        <div className='bg-[#15132B] max-w-[345px] lg:flex flex-col 2xl:text-[10px] xl:text-[8px] text-[7px] hidden'>
+        <div className='bg-[#15132B] z-[60] lg:relative lg:translate-x-0  transition-all duration-500 max-w-[345px] lg:flex flex-col 2xl:text-[10px] xl:text-[8px] text-[7px] -translate-x-full absolute pb-8' ref={sliderRef}>
             <div className='flex items-center py-[48px] text-[2.4em] gap-[4px] 2xl:pl-[3.15em] xl:pl-[2.8em] pl-[2.4em] pr-[1.38em]'>
                 <h1 className=' text-[#FFFFFF] pr-[2em]'>weframetech</h1>
                 <button className='w-[2.03em]'>
-                    <Image src={Hamburger} alt="" className='w-full'/>
+                    <Image src={Hamburger} alt="" className='w-full' onClick={handleHide} />
                 </button>
             </div>
-            <div className='py-[12px] '>
+            <div className='py-[12px]'>
                 <h2 className='text-[#C7C7C7]  pb-[25px] text-[1.65em] font-bold 2x:pl-[3.125em] xl:pl-[2.4em] pl-[1.8em] flex'>MAIN MENU</h2>
                 <ul className='text-[1.8em] flex flex-col gap-[14px] font-semibold text-[#464366]'>
                     <li className='2xl:pl-[2.7em] xl:pl-[2em] pl-[1.4em] pr-[2.5em]'>
@@ -130,9 +140,28 @@ export default function Sidebar() {
                             <p>Settings</p>
                         </div>
                     </li>
-
-
                 </ul>
+                <div className=' 2xl:pl-[2.7em] xl:pl-[2em] pl-[1.4em] pr-[2.5em] mt-[117px] xl:max-w-none max-w-[245px]'>
+                    <div className='flex flex-col gap-[15px] p-[21px] bg-gradient-to-r from-[#A0F9FF82] xl:text-[24px] lg:text-[18px] text-[16px] md:text-[] to-[#A0F9FF33] rounded-[32px] py-[33px] pb-[40px] relative'>
+                        <div className='flex flex-col gap-[5px] font-bold text-white'>
+                            <div>
+                                <Image src={Kdots} alt="" />
+                            </div>
+                            <p>
+                                Increase your work with kanban
+                            </p>
+                        </div>
+                        <button>
+                            <Image src={Karrow} alt="" />
+                        </button>
+                        <div className='absolute bottom-0 right-0'>
+                            <Image src={Mask} alt="" className='w-full' />
+                        </div>
+                    </div>
+
+
+                </div>
+
             </div>
         </div>
     )

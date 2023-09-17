@@ -7,12 +7,15 @@ import Flag from '../../public/assets/united-states 1.svg'
 import Hamburger from '../../public/assets/hamburgermenu.svg'
 import Image from 'next/image'
 import Notify from '../layouts/Notify'
+import { useContext } from 'react';
+import { GlobalInfo } from '../page';
 
 
 
 export default function Header() {
+    const { sliderRef } = useContext(GlobalInfo);
     const ShowMenu = () => {
-        alert('hi')
+        sliderRef.current.classList.toggle('-translate-x-full')
     }
     return (
         <nav className='bg-[#1E1C3A]  py-[24px] 3xl:px-[48px] xl:px-[38px] lg:py-[22px] px-[14px]'>

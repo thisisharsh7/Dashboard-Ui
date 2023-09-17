@@ -1,19 +1,20 @@
+"use client";
 import Image from 'next/image'
-import Header from './components/Header'
 import Sidebar from './components/Sidebar'
-import Hero from './components/Hero'
+import Mainbar from './components/Mainbar'
+import { createContext, useRef } from 'react'
+
+export const GlobalInfo = createContext();
 
 export default function Home() {
+  const sliderRef = useRef(null);
 
   return (
-    <main className='flex  max-w-[1920px] mx-auto'>
-      <Sidebar />
-      <div className='flex flex-col flex-1'>
-        <Header />
-        <Hero />
-      </div>
-
-
-    </main>
+    <GlobalInfo.Provider value={{ sliderRef }}>
+      <main className='flex  max-w-[1920px] mx-auto'>
+        <Sidebar />
+        <Mainbar />
+      </main>
+    </GlobalInfo.Provider>
   )
 }

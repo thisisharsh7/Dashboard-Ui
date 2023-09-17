@@ -3,9 +3,9 @@ import React from 'react'
 import Plus from '../../public/assets/Plus.svg'
 import Card from './Card'
 
-const Todo = ({ heading, NoOfCards }) => {
+const Todo = ({ heading}) => {
     return (
-        <div className='flex flex-col justify-between text-white mt-5'>
+        <div className='flex flex-col text-white mt-5'>
             <div className='flex items-center justify-between px-3 py-5'>
                 <div className='text-[20px] font-bold'>
                     {heading}

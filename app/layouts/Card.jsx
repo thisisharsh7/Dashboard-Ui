@@ -3,7 +3,7 @@ import Image from "next/image";
 import Dots from "../../public/assets/vertIcon (1).svg";
 import Clock from "../../public/assets/clock.svg";
 
-const Card = ({ title, caption, done, bcolor }) => {
+export default function Card({ title, caption, done, bcolor }) {
   return (
     <div className="flex flex-col gap-y-4 gap lg:w-[339px] md:w-[327px] w-[280px]  bg-[#211A75] p-6 rounded-[14px] text-white">
       <div className="flex justify-between">
@@ -48,4 +48,3 @@ const Card = ({ title, caption, done, bcolor }) => {
   );
 };
 
-export default Card;
